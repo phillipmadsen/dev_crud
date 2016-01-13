@@ -1,0 +1,12 @@
+
+//{{-- ADMIN ROUTES - move to admin group --}}
+Route::get('$MODEL_NAME_PLURAL_CAMEL$/index', ['as' => 'admin/$MODEL_NAME_PLURAL_CAMEL$/index', 'uses' => '$MODEL_NAME$Controller@admin_index']);
+Route::get('$MODEL_NAME_PLURAL_CAMEL$/create', ['as' => 'admin/$MODEL_NAME_PLURAL_CAMEL$/create', 'uses' => '$MODEL_NAME$Controller@admin_create']);
+Route::get('$MODEL_NAME_PLURAL_CAMEL$/{id}/edit', ['as' => 'admin/$MODEL_NAME_PLURAL_CAMEL$/edit', 'uses' => '$MODEL_NAME$Controller@admin_edit']);
+Route::get('$MODEL_NAME_PLURAL_CAMEL$/{id}/show', ['as' => 'admin/$MODEL_NAME_PLURAL_CAMEL$/show', 'uses' => '$MODEL_NAME$Controller@admin_show']);
+//{{-- Route::get('admin/', '$MODEL_NAME$Controller@admin_table'); --}}
+
+
+//{{-- LIVE ROUTES --}}
+Route::resource('$MODEL_NAME_PLURAL_CAMEL$', '$MODEL_NAME$Controller');
+Route::get('$MODEL_NAME_PLURAL_CAMEL$/{id}/delete', [ 'as' => '$MODEL_NAME_PLURAL_CAMEL$.delete', 'uses' => '$MODEL_NAME$Controller@destroy', ]);
